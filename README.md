@@ -1,49 +1,50 @@
 ***SOKOBAN AI SOLVER***
 
 
-**ΚΑΝΟΝΕΣ ΠΑΙΧΝΙΔΙΟΥ**
+**GAME RULES**
 
-Στην αρχή του προγράμματος θα ζητηθεί από τον χρήστη να επιλέξει το επίπεδο δυσκολίας πίστας SOKOBAN που επιθυμεί.
-Αν υπάρχει λύση τότε θα τυπωθεί κάθε κίνηση που έκανε ο παίχτης μέχρι να φτάσει στην τελική κατάσταση. 
-Ταυτόχρονα τυπώνεται το κόστος f και h την συγκεκριμένη στιγμή.
-Αν δεν υπάρχει λύση θα τυπωθεί ανάλογο μήνυμα.
-Στόχος του παιχνιδιού(τελική κατάσταση) είναι ο παίχτης να βάλει κάθε κουτί σε έναν στόχο.
-ΔΕΝ επιτρέπεται να τοποθετηθούν 2 ή παραπάνω κουτιά σε έναν στόχο. Η αντιστοιχία πρέπει να γίνει 1-1.
-
-
-
-**ΑΝΤΙΣΤΟΙΧΙΕΣ ΣΥΜΒΟΛΩΝ**
-
- -> 1 = "Παίχτης"\
- -> 0 = "Κουτί"\
- -> # = "Τοίχος"\
- -> $ = "Στόχος"\
- -> * = "Κουτί πάνω σε στόχο"\
- -> + = "Παίχτης πάνω σε στόχο"
+At the start of the program, the user is prompted to select the desired SOKOBAN level difficulty.
+If a solution exists, each move performed by the player will be printed until the final state is reached.
+At the same time, the cost values f and h at each step are displayed.
+If no solution exists, an appropriate message is printed.
+The goal of the game (final state) is for the player to place each box on a target.
+It is NOT allowed to place two or more boxes on the same target.
+The correspondence must be one-to-one (1–1).
 
 
 
-**ΔΟΜΗ ΚΩΔΙΚΑ**
+**SYMBOL MAPPINGS**
 
--> Κλάση Main()
+ -> 1 = "Player"\
+ -> 0 = "Box"\
+ -> # = "Wall"\
+ -> $ = "Target"\
+ -> * = "Box on Target"\
+ -> + = "Player on Target"
 
--> Υλοποίηση αλγορίθμου Α*(AstarAlgorithm())
 
--> Βασικές μέθοδοι(isValidMove(...), updateGrid(...), isDeadlock(...))
 
--> Βοηθητικές μέθοδοι(isCorridorDeadlock(...), isItCorner(...), checkFourDirections(...), noMoneyOrBox(...), findPlayer(...), copyGrid(...), printSolutionPath(...), makeRectangularWithBorder(...), isGoal(...))
+**CODE STRUCTURE**
 
--> Υλοποίηση ευρετικής συνάρτησης(heuristic(...), isValid(...), IDSPlayertobox(...), DLS(...))
+-> Main()
 
--> Κλάση Node
+-> A* Algorithm implementation(AstarAlgorithm())
+
+-> Core methods(isValidMove(...), updateGrid(...), isDeadlock(...))
+
+-> Helper methods(isCorridorDeadlock(...), isItCorner(...), checkFourDirections(...), noMoneyOrBox(...), findPlayer(...), copyGrid(...), printSolutionPath(...), makeRectangularWithBorder(...), isGoal(...))
+
+-> Heuristic function implementation(heuristic(...), isValid(...), IDSPlayertobox(...), DLS(...))
+
+-> Node Class
 (Constructor, equals(...), hashCode(), print())
 
 
 
-**ΔΟΜΗ ΑΡΧΕΙΩΝ**
+**FILE STRUCTURE**
 
-Στο file : Main.java, είναι όλος ο κώδικας εκτός από την κλάση: Node, η οποία αναπαριστά κάθε κατάσταση του παιχνιδιού και βρίσκεται στο file: Node.java
+*Main.java*
+Contains the entire codebase except the Node class.
 
-**Compile**
-
-Το πρότζεκτ μπορεί να μεταγλωτιστεί και να τρέξει μέσω περιβάλλοντος ανάπτυξης (INTELLIJ IDEA, ECLIPSE, VS CODE κ.λπ). ή μέσω cmd με τις εντολές javac *.java, και με την εντολή java Main ώστε να ξεκινήσει το πρόγραμμα. Βασική προϋπόθεση αποτελεί η εγκατάσταση Java JDK 21 ή μεταγενέστερης έκδοσης στο σύστημα.
+*Node.java*
+Contains the Node class, which represents each game state.
