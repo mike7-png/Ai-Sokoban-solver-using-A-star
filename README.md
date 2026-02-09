@@ -43,8 +43,8 @@ The correspondence must be one-to-one (1–1).
 
 **FILE STRUCTURE**
 
-*Main.java*
-:Contains the entire codebase except the Node class.
+*Main.java:*
+Contains the entire codebase except the Node class.
 
-*Node.java*
-:Contains the Node class, which represents each game state.
+*Node.java:*
+Contains the Node class, which represents each game state.
