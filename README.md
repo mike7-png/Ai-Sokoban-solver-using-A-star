@@ -48,3 +48,7 @@ Contains the entire codebase except the Node class.
 
 *Node.java:*
 Contains the Node class, which represents each game state.
+
+
+![alt text](step0-HardLevel.png)
+![alt text](step389-HardLevel.png)
