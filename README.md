@@ -85,6 +85,7 @@ The objective is to place **each box onto a target**.
 ## Highlights
 
 - A\* search with heuristic evaluation
+- Used IDS algorithm for heuristic implementation
 - Deadlock detection for pruning invalid states
 - Step-by-step solution visualization
 
